@@ -41,8 +41,7 @@ const HomePage = () => {
   async function fetchData() {
     setLoading(true);
     try {
-      const product = await setProducts(getDatafromLS);
-      setProducts(product);
+      setProducts(getDatafromLS);
     } catch (error: any) {
       toast({
         title: "Oops! Something went wrong.",
@@ -120,7 +119,7 @@ const HomePage = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {products.map((item: any) => (
+            {products?.map((item: any) => (
               <TableRow key={item.id}>
                 <TableCell className="font-medium text-center">
                   {item.id}
